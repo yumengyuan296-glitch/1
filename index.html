@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>时间本位 | 通俗版书稿</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#reader">跳到正文</a>
+    <div class="progress" id="progress"></div>
+
+    <header class="topbar" aria-label="顶部导航">
+      <a class="brand" href="#top" aria-label="回到顶部">
+        <span class="brand-mark"></span>
+        <span>时间本位</span>
+      </a>
+      <div class="reading-status" aria-live="polite">
+        <span id="currentSection">序章</span>
+        <span id="readPercent">0%</span>
+      </div>
+      <nav class="top-actions" aria-label="阅读工具">
+        <button class="icon-button toc-toggle" id="tocToggle" type="button" title="打开目录" aria-label="打开目录" aria-expanded="false">☰</button>
+        <button class="icon-button" id="fontMinus" type="button" title="缩小字号" aria-label="缩小字号">A-</button>
+        <button class="icon-button" id="fontPlus" type="button" title="放大字号" aria-label="放大字号">A+</button>
+        <button class="icon-button" id="themeToggle" type="button" title="切换主题" aria-label="切换主题">◐</button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <canvas id="timeCanvas" aria-hidden="true"></canvas>
+        <div class="hero-inner">
+          <p class="kicker">一套普通人也能用的判断方法</p>
+          <h1 id="hero-title">用时间看清金钱、关系、工具和人生选择</h1>
+          <p class="hero-copy">
+            不把人生变成表格，只把隐形成本照亮：什么在还给你时间，什么在偷偷拿走你的生命。
+          </p>
+          <div class="hero-panel" aria-label="核心问题">
+            <span>最终问题</span>
+            <strong>这件事是在还给我时间，还是拿走我时间？</strong>
+          </div>
+          <div class="hero-ledger" aria-label="阅读摘要">
+            <div>
+              <span>18</span>
+              <small>章正文</small>
+            </div>
+            <div>
+              <span>4</span>
+              <small>层账本</small>
+            </div>
+            <div>
+              <span>5</span>
+              <small>日常问题</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="layout">
+        <aside class="toc-wrap" id="tocPanel" aria-label="目录">
+          <div class="toc-card">
+            <div class="toc-head">
+              <div class="toc-heading">目录</div>
+              <button class="toc-close" id="tocClose" type="button" aria-label="关闭目录">×</button>
+            </div>
+            <nav id="toc" class="toc"></nav>
+          </div>
+        </aside>
+
+        <article class="reader" id="reader" aria-live="polite">
+          <div class="loading">正在载入书稿...</div>
+        </article>
+
+        <aside class="side-notes" aria-label="阅读提示">
+          <div class="note-card ledger-card">
+            <span class="note-label">阅读进度</span>
+            <strong id="sidePercent">0%</strong>
+            <p id="sideSection">正在载入章节</p>
+          </div>
+          <div class="note-card">
+            <span class="note-label">读法</span>
+            <p>先读每章的“一句话”，再回头看故事和模板。它不是鸡汤，是一套看见隐形成本的尺。</p>
+          </div>
+          <div class="note-card quote-card">
+            <span class="note-label">核心句</span>
+            <p>省时间不是为了更忙，而是为了把生命交还给你真正重视的东西。</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div class="chapter-nav" id="chapterNav" aria-label="章节导航">
+      <a id="prevChapter" href="#top">上一章</a>
+      <a id="nextChapter" href="#top">下一章</a>
+    </div>
+    <div class="toc-scrim" id="tocScrim" hidden></div>
+    <button class="back-top" id="backTop" type="button" aria-label="回到顶部">↑</button>
+    <script src="./script.js"></script>
+  </body>
+</html>
